@@ -1,4 +1,6 @@
-import 'package:dalel/core/utils/app_assets.dart';
+import 'package:dalel/core/routes/app_router.dart';
+import 'package:dalel/core/utils/app_colors.dart';
+import 'package:dalel/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,11 +13,10 @@ class Dalel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: Container(
-          child: Image.asset(Assets.imagesOnboarding3),
-        ),
-      ),
+      home: const SplashView(),
+      theme: ThemeData(scaffoldBackgroundColor: AppColors.offWhite),
+      debugShowCheckedModeBanner: false,
+      routes: buildAppRoutes(),
     );
   }
 }
