@@ -14,7 +14,8 @@ class OnboardingView extends StatelessWidget {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
+          child: ListView(
+            physics: const BouncingScrollPhysics(),
             children: [
               const SizedBox(
                 height: 40,
@@ -23,6 +24,9 @@ class OnboardingView extends StatelessWidget {
               const CustomNavBar(),
               // pic
               OnBoardingWidgetBody(),
+              const SizedBox(
+                height: 88,
+              ),
               //custombutton
               CustomButton(
                 text: AppStrings.next,

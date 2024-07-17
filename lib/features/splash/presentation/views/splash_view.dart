@@ -34,7 +34,7 @@ void delayedNavigate(context) {
   Future.delayed(
     const Duration(seconds: 2),
     () {
-      customnavigate(context, '/onboardingview');
+      customReplacementNavigate(context, '/onboardingview');
     },
   );
 }
