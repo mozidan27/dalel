@@ -1,3 +1,4 @@
+import 'package:dalel/core/funcations/navigation.dart';
 import 'package:dalel/core/utils/app_strings.dart';
 import 'package:dalel/core/utils/app_text_styles.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +12,15 @@ class CustomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerRight,
-      child: Text(
-        AppStrings.skip,
-        style: CustomTextStyles.poppins300style16
-            .copyWith(fontWeight: FontWeight.w400),
+      child: GestureDetector(
+        onTap: () {
+          customReplacementNavigate(context, '/signup');
+        },
+        child: Text(
+          AppStrings.skip,
+          style: CustomTextStyles.poppins300style16
+              .copyWith(fontWeight: FontWeight.w400),
+        ),
       ),
     );
   }
