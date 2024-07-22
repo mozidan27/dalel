@@ -8,21 +8,8 @@ import 'package:dalel/features/auth/presentation/widgets/terms_and_condition_wid
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CustomSignUpForm extends StatefulWidget {
+class CustomSignUpForm extends StatelessWidget {
   const CustomSignUpForm({super.key});
-
-  @override
-  State<CustomSignUpForm> createState() => _CustomSignUpFormState();
-}
-
-class _CustomSignUpFormState extends State<CustomSignUpForm> {
-  bool securePassword = true;
-
-  void visibility() {
-    setState(() {
-      securePassword = !securePassword;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,15 +40,21 @@ class _CustomSignUpFormState extends State<CustomSignUpForm> {
                       authCubit.emailAddress = email;
                     }),
                 CustomTextFormFieldWidget(
-                    obscureText: securePassword,
-                    suffixIcon: securePassword
+                    suffixIcon: authCubit.obscurePasswordTextValue == true
                         ? IconButton(
-                            onPressed: visibility,
-                            icon: const Icon(Icons.visibility_outlined))
+                            onPressed: authCubit.obscurePasswordText,
+                            icon: Icon(
+                              Icons.visibility_outlined,
+                              color: AppColors.grey,
+                            ))
                         : IconButton(
-                            onPressed: visibility,
-                            icon: const Icon(Icons.visibility_off_outlined)),
+                            onPressed: authCubit.obscurePasswordText,
+                            icon: const Icon(
+                              Icons.visibility_off_outlined,
+                              color: Colors.blue,
+                            )),
                     text: AppStrings.password,
+                    obscureText: authCubit.obscurePasswordTextValue!,
                     onChanged: (password) {
                       authCubit.password = password;
                     }),
