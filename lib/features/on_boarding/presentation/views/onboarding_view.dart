@@ -1,6 +1,6 @@
-import 'package:dalel/features/home/presentation/widgets/custom_nav_bar.dart';
-import 'package:dalel/features/home/presentation/widgets/get_buttons.dart';
-import 'package:dalel/features/home/presentation/widgets/on_boarding_view_widget.dart';
+import 'package:dalel/features/on_boarding/presentation/widgets/custom_nav_bar.dart';
+import 'package:dalel/features/on_boarding/presentation/widgets/get_buttons.dart';
+import 'package:dalel/features/on_boarding/presentation/widgets/on_boarding_view_widget.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingView extends StatefulWidget {

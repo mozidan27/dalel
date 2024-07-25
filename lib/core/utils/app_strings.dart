@@ -16,7 +16,7 @@ abstract class AppStrings {
       password = "Password",
       iHaveAgreeToOur = "I have agree to our ",
       termsAndCondition = "Terms and Condition",
-      signUp = "Sign Up",
+      signUp = " Sign Up",
       signIn = " Sign In",
       alreadyHaveAnAccount = "Already have an account ?",
       dontHaveAnAccount = "Don’t have an account ?",

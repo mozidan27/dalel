@@ -1,6 +1,6 @@
 import 'package:dalel/core/utils/app_text_styles.dart';
-import 'package:dalel/features/home/data/models/on_boarding_model.dart';
-import 'package:dalel/features/home/presentation/widgets/custom_smooth_page_indecator.dart';
+import 'package:dalel/features/on_boarding/data/models/on_boarding_model.dart';
+import 'package:dalel/features/on_boarding/presentation/widgets/custom_smooth_page_indecator.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingWidgetBody extends StatelessWidget {
