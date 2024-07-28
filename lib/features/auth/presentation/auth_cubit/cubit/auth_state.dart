@@ -25,3 +25,13 @@ final class SigninFailurState extends AuthState {
 
   SigninFailurState({required this.errorMessage});
 }
+
+final class PasswordRestLoadingState extends AuthState {}
+
+final class PasswordRestSuccessState extends AuthState {}
+
+final class PasswordRestFailurState extends AuthState {
+  final String errorMessage;
+
+  PasswordRestFailurState({required this.errorMessage});
+}
