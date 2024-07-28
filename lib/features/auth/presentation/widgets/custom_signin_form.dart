@@ -71,10 +71,10 @@ class CustomSignInForm extends StatelessWidget {
                         color: AppColors.primaryColor,
                       )
                     : CustomButton(
-                        onTap: () {
+                        onTap: () async {
                           if (authCubit.signinFormKey.currentState!
                               .validate()) {
-                            authCubit.signInWithEmailAndPassword();
+                            await authCubit.signInWithEmailAndPassword();
                           }
                         },
                         text: AppStrings.signIn,
