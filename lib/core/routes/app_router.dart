@@ -3,6 +3,7 @@ import 'package:dalel/features/auth/presentation/views/forgot_password_view.dart
 import 'package:dalel/features/auth/presentation/views/sign_in_view.dart';
 import 'package:dalel/features/auth/presentation/views/sign_up_view.dart';
 import 'package:dalel/features/home/presentation/view/home_view.dart';
+import 'package:dalel/features/home/presentation/widgets/home_bottom_nav_bar_widget.dart';
 import 'package:dalel/features/on_boarding/presentation/views/onboarding_view.dart';
 import 'package:dalel/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ Map<String, WidgetBuilder> buildAppRoutes() {
           child: const SignInView(),
         ),
     '/homeview': (context) => const HomeView(),
+    '/homenavbar': (context) => const HomeeBottomNavBarWidget(),
     '/forgotpass': (context) => BlocProvider(
           create: (context) => AuthCubit(),
           child: const ForgotPasswordView(),
