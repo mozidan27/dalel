@@ -1,5 +1,7 @@
-import 'package:dalel/core/funcations/navigation.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:dalel/features/home/presentation/widgets/home_sections/app_bar_section.dart';
+import 'package:dalel/features/home/presentation/widgets/home_sections/historical_characters_section.dart';
+import 'package:dalel/features/home/presentation/widgets/home_sections/historical_periods_section.dart';
+import 'package:dalel/features/home/presentation/widgets/home_sections/historical_souvenirs_section.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -7,17 +9,18 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(actions: [
-        IconButton(
-            onPressed: () {
-              FirebaseAuth.instance.signOut();
-              customReplacementNavigate(context, '/signin');
-            },
-            icon: const Icon(Icons.logout)),
-      ]),
-      body: const Center(
-        child: Text("home page"),
+    return const Scaffold(
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: CustomScrollView(
+          physics: BouncingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(child: AppBarSection()),
+            SliverToBoxAdapter(child: HistoricalPeriodSection()),
+            SliverToBoxAdapter(child: HistoricalCharacterScetion()),
+            SliverToBoxAdapter(child: HistoricalSouvenirSection()),
+          ],
+        ),
       ),
     );
   }
